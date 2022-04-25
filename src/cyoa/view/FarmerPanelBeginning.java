@@ -1,6 +1,8 @@
 package cyoa.view;
 
-public class FarmerPanelBeginning
+import javax.swing.JPanel;
+
+public class FarmerPanelBeginning extends JPanel
 {
 
 }

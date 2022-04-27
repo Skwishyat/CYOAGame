@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import cyoa.controller.Controller;
+import cyoa.view.farmer.one.FarmerPanelBeginning;
 
 public class StoryFrame extends JFrame
 {

@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import cyoa.controller.Controller;
+import cyoa.view.farmer.one.FarmerPanelBeginning;
 
 public class MainPanel extends JPanel
 {
@@ -70,11 +71,6 @@ public class MainPanel extends JPanel
 		layout.putConstraint(SpringLayout.SOUTH, panel, -143, SpringLayout.SOUTH, this);
 		layout.putConstraint(SpringLayout.WEST, panel, 405, SpringLayout.WEST, this);
 		layout.putConstraint(SpringLayout.EAST, panel, 1004, SpringLayout.WEST, this);
-	}
-	
-	private void changeScreen(String screen)
-	{
-		
 	}
 }
 

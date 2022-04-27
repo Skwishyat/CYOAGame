@@ -8,10 +8,15 @@ import cyoa.controller.Controller;
 
 public class MainPanel extends JPanel
 {
-	private FarmerPanelBeginning farmerBeginning;
 	private Controller app;
 	private JPanel panel;
 	private JLabel label;
+	private SpringLayout layout;
+	
+	private JPanel cardPanel;
+	
+	private FarmerPanelBeginning farmerBeginning;
+	
 	private JButton farmerButton;
 	private JButton questButton;
 	private JButton spaceButton;
@@ -21,8 +26,19 @@ public class MainPanel extends JPanel
 	{
 		super();
 		this.app = app;
-		this.panel = new JPanel();
-		this.label = new JLabel("What type of adventure would you like to have?:");
+		this.panel = new JPanel(new GridLayout(2, 2));
+		this.label = new JLabel("What type of adventure would you like to have?");
+		this.layout = new SpringLayout();
+		layout.putConstraint(SpringLayout.WEST, label, 554, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -68, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.NORTH, panel, 283, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -143, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, 405, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, 1004, SpringLayout.WEST, this);
+		
+		this.cardPanel = new JPanel(new CardLayout());
+		
+		this.farmerBeginning = new FarmerPanelBeginning(this.app);
 		
 		this.farmerButton = new JButton("Young Farmer");
 		this.questButton = new JButton("Magic Quest");
@@ -32,26 +48,48 @@ public class MainPanel extends JPanel
 		setupPanel();
 		setupListeners();
 		setupLayout();
+		setupFrame();
 	}
 	
 	private void setupPanel()
 	{
+		this.setLayout(layout);
 		this.setPreferredSize(new Dimension(1500,900));
 		
 		this.add(panel);
-		panel.add(label);
+		this.add(label);
 		panel.add(farmerButton);
 		panel.add(questButton);
+		panel.add(spaceButton);
 		panel.add(storeButton);
 	}
 	
 	private void setupListeners()
 	{
-//		farmerButton.addActionListener(select -> StoryFrame.changePanel(farmerBeginning));
+		farmerButton.addActionListener(click -> ((CardLayout) cardPanel.getLayout()).show(cardPanel, "FBeginning"));
 	}
 	
 	private void setupLayout()
 	{
 		
 	}
+	
+	private void changeScreen(String screen)
+	{
+		
+	}
+	
+	private void setupFrame()
+	{
+		cardPanel.add(farmerBeginning, "FBeginning");
+	}
 }
+
+
+
+
+
+
+
+
+

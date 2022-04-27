@@ -31,7 +31,7 @@ public class StoryFrame extends JFrame
 		cardPanel.add(panel, "main");
 		cardPanel.add(farmerBeginning, "FBeginning");
 		
-		this.setContentPane(panel);
+		this.setContentPane(cardPanel);
 		this.setTitle("Choose your own adventure!");
 		this.setSize(1500, 900);
 		this.setResizable(false);

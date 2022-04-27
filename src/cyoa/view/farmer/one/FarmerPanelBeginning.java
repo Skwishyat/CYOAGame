@@ -1,4 +1,4 @@
-package cyoa.view;
+package cyoa.view.farmer.one;
 
 import javax.swing.JPanel;
 import cyoa.controller.Controller;

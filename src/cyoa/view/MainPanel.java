@@ -29,12 +29,6 @@ public class MainPanel extends JPanel
 		this.panel = new JPanel(new GridLayout(2, 2));
 		this.label = new JLabel("What type of adventure would you like to have?");
 		this.layout = new SpringLayout();
-		layout.putConstraint(SpringLayout.WEST, label, 554, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.SOUTH, label, -68, SpringLayout.NORTH, panel);
-		layout.putConstraint(SpringLayout.NORTH, panel, 283, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.SOUTH, panel, -143, SpringLayout.SOUTH, this);
-		layout.putConstraint(SpringLayout.WEST, panel, 405, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.EAST, panel, 1004, SpringLayout.WEST, this);
 		
 		this.cardPanel = new JPanel(new CardLayout());
 		
@@ -71,7 +65,12 @@ public class MainPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		layout.putConstraint(SpringLayout.WEST, label, 554, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -68, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.NORTH, panel, 283, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -143, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, 405, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, 1004, SpringLayout.WEST, this);
 	}
 	
 	private void changeScreen(String screen)

@@ -12,6 +12,7 @@ public class StoryFrame extends JFrame
 	private Controller app;
 	private MainPanel panel;
 	private JPanel cardPanel;
+	private FarmerPanelBeginning farmerBeginning;
 	
 	public StoryFrame(Controller app)
 	{
@@ -19,6 +20,7 @@ public class StoryFrame extends JFrame
 		this.app = app;
 		this.panel = new MainPanel(this.app);
 		this.cardPanel = new JPanel(new CardLayout());
+		this.farmerBeginning = new FarmerPanelBeginning(this.app);
 		
 		setupFrame();
 	}
@@ -26,6 +28,7 @@ public class StoryFrame extends JFrame
 	private void setupFrame()
 	{
 		cardPanel.add(panel, "main");
+		cardPanel.add(farmerBeginning, "FBeginning");
 		
 		this.setContentPane(panel);
 		this.setTitle("Choose your own adventure!");

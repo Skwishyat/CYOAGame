@@ -42,7 +42,6 @@ public class MainPanel extends JPanel
 		setupPanel();
 		setupListeners();
 		setupLayout();
-		setupFrame();
 	}
 	
 	private void setupPanel()
@@ -60,7 +59,7 @@ public class MainPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		farmerButton.addActionListener(click -> ((CardLayout) cardPanel.getLayout()).show(cardPanel, "FBeginning"));
+		farmerButton.addActionListener(click -> app.getFrame().changeScreen("FBeginning"));
 	}
 	
 	private void setupLayout()
@@ -76,11 +75,6 @@ public class MainPanel extends JPanel
 	private void changeScreen(String screen)
 	{
 		
-	}
-	
-	private void setupFrame()
-	{
-		cardPanel.add(farmerBeginning, "FBeginning");
 	}
 }
 

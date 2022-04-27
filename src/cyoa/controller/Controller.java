@@ -15,4 +15,9 @@ public class Controller
 	{
 		
 	}
+	
+	public StoryFrame getFrame()
+	{
+		return frame;
+	}
 }

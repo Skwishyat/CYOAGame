@@ -52,6 +52,7 @@ public class MainPanel extends JPanel
 		
 		this.add(panel);
 		this.add(label);
+		
 		panel.add(farmerButton);
 		panel.add(questButton);
 		panel.add(spaceButton);

@@ -40,6 +40,10 @@ public class StoryFrame extends JFrame
 		this.cardPanel = new JPanel(new CardLayout());
 		this.farmerBeginning = new FarmerPanelBeginning(this.app);
 		
+		this.bOne = new FarmerPanelTwoOne(this.app);
+		this.bTwo = new FarmerPanelTwoTwo(this.app);
+		this.bThree = new FarmerPanelTwoThree(this.app);
+		
 		setupFrame();
 	}
 	
@@ -47,9 +51,9 @@ public class StoryFrame extends JFrame
 	{
 		cardPanel.add(panel, "main");
 		cardPanel.add(farmerBeginning, "FBeginning");
-//		cardPanel.add(bOne, "FBOne");
-//		cardPanel.add(bTwo, "FBTwo");
-//		cardPanel.add(bThree, "FBThree");
+		cardPanel.add(bOne, "FBOne");
+		cardPanel.add(bTwo, "FBTwo");
+		cardPanel.add(bThree, "FBThree");
 		
 		this.setContentPane(cardPanel);
 		this.setTitle("Choose your own adventure!");

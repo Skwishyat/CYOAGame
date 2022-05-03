@@ -5,6 +5,7 @@ import cyoa.controller.Controller;
 import java.awt.*;
 import javax.swing.*;
 import cyoa.view.farmer.two.*;
+import cyoa.model.FarmerStory;
 
 /**
  * This is the panel for the first slide of the farmer story
@@ -18,6 +19,8 @@ public class FarmerPanelBeginning extends JPanel
 	private JPanel panel;
 	private JLabel label;
 	private SpringLayout layout;
+	
+	private FarmerStory farmerInfo;
 	
 	private FarmerPanelTwoOne bOne;
 	private FarmerPanelTwoTwo bTwo;
@@ -39,6 +42,8 @@ public class FarmerPanelBeginning extends JPanel
 		this.label = new JLabel("One of your sheep has jumped the fence and run off into the dark "
 				+ "forest! /nWhat will you do:");
 		this.layout = new SpringLayout();
+		
+		this.farmerInfo = new FarmerStory();
 		
 		this.bOne = new FarmerPanelTwoOne(this.app);
 		this.bTwo = new FarmerPanelTwoTwo(this.app);
@@ -74,9 +79,9 @@ public class FarmerPanelBeginning extends JPanel
 	 */
 	private void setupListeners()
 	{
-		bOneButton.addActionListener(click -> app.getFrame().changeScreen("FBOne"));
-		bTwoButton.addActionListener(click -> app.getFrame().changeScreen("FBTwo"));
-		bThreeButton.addActionListener(click -> app.getFrame().changeScreen("FBThree"));
+		bOneButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.B_ONE]));
+		bTwoButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.B_TWO]));
+		bThreeButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.B_THREE]));
 	}
 	
 	/**

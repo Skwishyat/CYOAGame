@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import cyoa.controller.Controller;
+import cyoa.model.*;
+
 import cyoa.view.farmer.one.*;
 import cyoa.view.farmer.two.*;
 import cyoa.view.farmer.three.*;
@@ -24,6 +26,11 @@ public class StoryFrame extends JFrame
 	private Controller app;
 	private MainPanel panel;
 	private JPanel cardPanel;
+	
+	private FarmerStory farmerInfo;
+	private QuestStory questInfo;
+	private SpaceStory spaceInfo;
+	
 	private FarmerPanelBeginning farmerBeginning;
 	
 	private FarmerPanelTwoOne bOne;
@@ -48,6 +55,11 @@ public class StoryFrame extends JFrame
 		this.app = app;
 		this.panel = new MainPanel(this.app);
 		this.cardPanel = new JPanel(new CardLayout());
+		
+		this.farmerInfo = new FarmerStory();
+		this.questInfo = new QuestStory();
+		this.spaceInfo = new SpaceStory();
+		
 		this.farmerBeginning = new FarmerPanelBeginning(this.app);
 		
 		this.bOne = new FarmerPanelTwoOne(this.app);
@@ -63,10 +75,10 @@ public class StoryFrame extends JFrame
 	private void setupFrame()
 	{
 		cardPanel.add(panel, "main");
-		cardPanel.add(farmerBeginning, "FBeginning");
-		cardPanel.add(bOne, "FBOne");
-		cardPanel.add(bTwo, "FBTwo");
-		cardPanel.add(bThree, "FBThree");
+		cardPanel.add(farmerBeginning, farmerInfo.panels[farmerInfo.A_ONE]);
+		cardPanel.add(bOne, farmerInfo.panels[farmerInfo.B_ONE]);
+		cardPanel.add(bTwo, farmerInfo.panels[farmerInfo.B_TWO]);
+		cardPanel.add(bThree, farmerInfo.panels[farmerInfo.B_THREE]);
 		
 		this.setContentPane(cardPanel);
 		this.setTitle("Choose your own adventure!");

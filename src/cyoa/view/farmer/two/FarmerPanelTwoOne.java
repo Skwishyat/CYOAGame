@@ -1,6 +1,8 @@
 package cyoa.view.farmer.two;
 
-import javax.swing.JPanel;
+import java.awt.Dimension;
+
+import javax.swing.*;
 import cyoa.controller.Controller;
 
 /**
@@ -14,6 +16,9 @@ public class FarmerPanelTwoOne extends JPanel
 	private JPanel panel;
 	private Controller app;
 	
+	private JLabel label;
+	private SpringLayout layout;
+	
 	/**
 	 * Creates a new FarmerPanelTwoOne with the controller it will be contained in
 	 * @param app The controller the panel will be contained in
@@ -23,6 +28,9 @@ public class FarmerPanelTwoOne extends JPanel
 		super();
 		this.panel = new JPanel();
 		this.app = app;
+		
+		this.label = new JLabel("B1");
+		this.layout = new SpringLayout();
 		
 		setupPanel();
 		setupListeners();
@@ -34,7 +42,11 @@ public class FarmerPanelTwoOne extends JPanel
 	 */
 	private void setupPanel()
 	{
+		this.setLayout(layout);
+		this.setPreferredSize(new Dimension(1500,900));
 		
+		this.add(panel);
+		this.add(label);
 	}
 	
 	/**
@@ -50,6 +62,9 @@ public class FarmerPanelTwoOne extends JPanel
 	 */
 	private void setupLayout()
 	{
-		
+		layout.putConstraint(SpringLayout.NORTH, label, 0, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.WEST, label, 70, SpringLayout.EAST, panel);
+		layout.putConstraint(SpringLayout.NORTH, panel, 63, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, 232, SpringLayout.WEST, this);
 	}
 }

@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import cyoa.controller.Controller;
+import cyoa.model.FarmerStory;
 import cyoa.view.farmer.one.FarmerPanelBeginning;
 
 /**
@@ -21,6 +22,8 @@ public class MainPanel extends JPanel
 	private SpringLayout layout;
 	
 	private JPanel cardPanel;
+	
+	private FarmerStory farmerInfo;
 	
 	private FarmerPanelBeginning farmerBeginning;
 	
@@ -42,6 +45,8 @@ public class MainPanel extends JPanel
 		this.layout = new SpringLayout();
 		
 		this.cardPanel = new JPanel(new CardLayout());
+		
+		this.farmerInfo = new FarmerStory();
 		
 		this.farmerBeginning = new FarmerPanelBeginning(this.app);
 		
@@ -77,7 +82,7 @@ public class MainPanel extends JPanel
 	 */
 	private void setupListeners()
 	{
-		farmerButton.addActionListener(click -> app.getFrame().changeScreen("FBeginning"));
+		farmerButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.A_ONE]));
 	}
 	
 	/**

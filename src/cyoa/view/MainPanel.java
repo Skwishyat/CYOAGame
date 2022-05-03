@@ -7,6 +7,12 @@ import java.awt.*;
 import cyoa.controller.Controller;
 import cyoa.view.farmer.one.FarmerPanelBeginning;
 
+/**
+ * This is the panel for the main screen of the application
+ * It has options to start one of three stories or look at previous runs of stories
+ * @author awil7254
+ *
+ */
 public class MainPanel extends JPanel
 {
 	private Controller app;
@@ -23,6 +29,10 @@ public class MainPanel extends JPanel
 	private JButton spaceButton;
 	private JButton storeButton;
 	
+	/**
+	 * Creates a new main panel with which controller it will be contained in
+	 * @param app the controller that the panel will be contained in 
+	 */
 	public MainPanel(Controller app)
 	{
 		super();
@@ -45,6 +55,9 @@ public class MainPanel extends JPanel
 		setupLayout();
 	}
 	
+	/**
+	 * sets up the panel, adding all the components to be displayed
+	 */
 	private void setupPanel()
 	{
 		this.setLayout(layout);
@@ -59,11 +72,17 @@ public class MainPanel extends JPanel
 		panel.add(storeButton);
 	}
 	
+	/**
+	 * sets up the action listeners for all the buttons
+	 */
 	private void setupListeners()
 	{
 		farmerButton.addActionListener(click -> app.getFrame().changeScreen("FBeginning"));
 	}
 	
+	/**
+	 * sets up the layout of where things are on the screen
+	 */
 	private void setupLayout()
 	{
 		layout.putConstraint(SpringLayout.WEST, label, 554, SpringLayout.WEST, this);

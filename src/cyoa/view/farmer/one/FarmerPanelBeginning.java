@@ -6,6 +6,12 @@ import java.awt.*;
 import javax.swing.*;
 import cyoa.view.farmer.two.*;
 
+/**
+ * This is the panel for the first slide of the farmer story
+ * It has three options for continuing the story
+ * @author awil7254
+ *
+ */
 public class FarmerPanelBeginning extends JPanel
 {
 	private Controller app;
@@ -21,6 +27,10 @@ public class FarmerPanelBeginning extends JPanel
 	private JButton bTwoButton;
 	private JButton bThreeButton;
 	
+	/**
+	 * Creates a new beginning farmer panel with the controller it will be contained in
+	 * @param app the controller that the panel will be contained in
+	 */
 	public FarmerPanelBeginning(Controller app)
 	{
 		super();
@@ -43,6 +53,9 @@ public class FarmerPanelBeginning extends JPanel
 		setupLayout();
 	}
 	
+	/**
+	 * sets up the panel, adding all the components to be displayed
+	 */
 	private void setupPanel()
 	{
 		this.setLayout(layout);
@@ -56,6 +69,9 @@ public class FarmerPanelBeginning extends JPanel
 		panel.add(bThreeButton);
 	}
 	
+	/**
+	 * sets up the action listeners for all the buttons
+	 */
 	private void setupListeners()
 	{
 		bOneButton.addActionListener(click -> app.getFrame().changeScreen("FBOne"));
@@ -63,6 +79,9 @@ public class FarmerPanelBeginning extends JPanel
 		bThreeButton.addActionListener(click -> app.getFrame().changeScreen("FBThree"));
 	}
 	
+	/**
+	 * sets up the layout of where things are on the screen
+	 */
 	private void setupLayout()
 	{
 		layout.putConstraint(SpringLayout.NORTH, panel, 269, SpringLayout.NORTH, this);

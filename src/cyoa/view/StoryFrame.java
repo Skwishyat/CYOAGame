@@ -13,6 +13,12 @@ import cyoa.view.farmer.four.*;
 import cyoa.view.farmer.five.*;
 import cyoa.view.farmer.six.*;
 
+/**
+ * This is the frame that will hold all of the information needed
+ * It has all of the panels from all stories storedto be used in the cardPanel
+ * @author awil7254
+ *
+ */
 public class StoryFrame extends JFrame
 {
 	private Controller app;
@@ -32,6 +38,10 @@ public class StoryFrame extends JFrame
 	private FarmerPanelThreeSix cSix;
 	private FarmerPanelThreeSeven cSeven;
 	
+	/**
+	 * Creates a new story frame with the controller it will be contained in 
+	 * @param app the controller that the frame will be contained in
+	 */
 	public StoryFrame(Controller app)
 	{
 		super();
@@ -47,6 +57,9 @@ public class StoryFrame extends JFrame
 		setupFrame();
 	}
 	
+	/**
+	 * sets up the frame adding the things needed to the cardPanel and what specifications the application will need
+	 */
 	private void setupFrame()
 	{
 		cardPanel.add(panel, "main");
@@ -63,6 +76,10 @@ public class StoryFrame extends JFrame
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Changes which panel is being displayed to be used when the corresponding buttons are clicked
+	 * @param screen the screen code for the panel to change to
+	 */
 	public void changeScreen(String screen)
 	{
 		((CardLayout) cardPanel.getLayout()).show(cardPanel, screen);

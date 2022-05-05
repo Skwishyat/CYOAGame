@@ -58,7 +58,7 @@ public class FarmerStory
 	
 	public FarmerStory()
 	{
-		panels = new String[44];
+		panels = new String[45];
 		panels[A_ONE] = "First";
 		
 		panels[B_ONE] = "B One";

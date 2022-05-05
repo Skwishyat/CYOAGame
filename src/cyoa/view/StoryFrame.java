@@ -202,6 +202,11 @@ public class StoryFrame extends JFrame
 		cardPanel.add(eThirteen, farmerInfo.panels[farmerInfo.E_THIRTEEN]);
 		
 		cardPanel.add(fOne, farmerInfo.panels[farmerInfo.F_ONE]);
+		cardPanel.add(fTwo, farmerInfo.panels[farmerInfo.F_TWO]);
+		cardPanel.add(fThree, farmerInfo.panels[farmerInfo.F_THREE]);
+		cardPanel.add(fFour, farmerInfo.panels[farmerInfo.F_FOUR]);
+		cardPanel.add(fFive, farmerInfo.panels[farmerInfo.F_FIVE]);
+		cardPanel.add(fSix, farmerInfo.panels[farmerInfo.F_SIX]);
 		
 		this.setContentPane(cardPanel);
 		this.setTitle("Choose your own adventure!");

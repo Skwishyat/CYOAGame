@@ -60,9 +60,55 @@ public class FarmerStory
 	{
 		panels = new String[44];
 		panels[A_ONE] = "First";
+		
 		panels[B_ONE] = "B One";
 		panels[B_TWO] = "B Two";
 		panels[B_THREE] = "B Three";
+		
+		panels[C_ONE] = "C One";
+		panels[C_TWO] = "C Two";
+		panels[C_THREE] = "C Three";
+		panels[C_FOUR] = "C Four";
+		panels[C_FIVE] = "C Five";
+		panels[C_SIX] = "C Six";
+		panels[C_SEVEN] = "C Seven";
+		
+		panels[D_ONE] = "D One";
+		panels[D_TWO] = "D Two";
+		panels[D_THREE] = "D Three";
+		panels[D_FOUR] = "D Four";
+		panels[D_FIVE] = "D Five";
+		panels[D_SIX] = "D Six";
+		panels[D_SEVEN] = "D Seven";
+		panels[D_EIGHT] = "D Eight";
+		panels[D_NINE] = "D Nine";
+		panels[D_TEN] = "D Ten";
+		panels[D_ELEVEN] = "D Eleven";
+		panels[D_TWELVE] = "D Twelve";
+		panels[D_THIRTEEN] = "D Thirteen";
+		panels[D_FOURTEEN] = "D Fourteen";
+		panels[D_FIFTEEN] = "D Fifteen";
+		
+		panels[E_ONE] = "E One";
+		panels[E_TWO] = "E Two";
+		panels[E_THREE] = "E Three";
+		panels[E_FOUR] = "E Four";
+		panels[E_FIVE] = "E Five";
+		panels[E_SIX] = "E Six";
+		panels[E_SEVEN] = "E Seven";
+		panels[E_EIGHT] = "E Eight";
+		panels[E_NINE] = "E Nine";
+		panels[E_TEN] = "E Ten";
+		panels[E_ELEVEN] = "E Eleven";
+		panels[E_TWELVE] = "E Eleven";
+		panels[E_THIRTEEN] = "E Thirteen";
+		
+		panels[F_ONE] = "F One";
+		panels[F_TWO] = "F Two";
+		panels[F_THREE] = "F Three";
+		panels[F_FOUR] = "F Four";
+		panels[F_FIVE] = "F Five";
+		panels[F_SIX] = "F Six";
 		
 	}
 }

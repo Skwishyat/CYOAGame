@@ -4,7 +4,6 @@ import javax.swing.JPanel;
 import cyoa.controller.Controller;
 import java.awt.*;
 import javax.swing.*;
-import cyoa.view.farmer.two.*;
 import cyoa.model.FarmerStory;
 
 /**
@@ -21,10 +20,6 @@ public class FarmerPanelBeginning extends JPanel
 	private SpringLayout layout;
 	
 	private FarmerStory farmerInfo;
-	
-	private FarmerPanelTwoOne bOne;
-	private FarmerPanelTwoTwo bTwo;
-	private FarmerPanelTwoThree bThree;
 	
 	private JButton bOneButton;
 	private JButton bTwoButton;
@@ -45,13 +40,9 @@ public class FarmerPanelBeginning extends JPanel
 		
 		this.farmerInfo = new FarmerStory();
 		
-		this.bOne = new FarmerPanelTwoOne(this.app);
-		this.bTwo = new FarmerPanelTwoTwo(this.app);
-		this.bThree = new FarmerPanelTwoThree(this.app);
-		
-		this.bOneButton = new JButton("first option");
-		this.bTwoButton = new JButton("second option");
-		this.bThreeButton = new JButton("third option");
+		this.bOneButton = new JButton("go to b1");
+		this.bTwoButton = new JButton("go to b2");
+		this.bThreeButton = new JButton("go to b3");
 		
 		setupPanel();
 		setupListeners();

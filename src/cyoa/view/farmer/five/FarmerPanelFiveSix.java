@@ -9,7 +9,7 @@ import cyoa.controller.Controller;
  * @author awil7254
  *
  */
-public class FarmerPanelFiveSix
+public class FarmerPanelFiveSix extends JPanel
 {
 	private JPanel panel;
 	private Controller app;

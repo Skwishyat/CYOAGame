@@ -1,6 +1,6 @@
 package cyoa.view.farmer.six;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import cyoa.controller.Controller;
 
 /**
@@ -13,6 +13,9 @@ public class FarmerPanelSecondEnding extends JPanel
 {
 	private JPanel panel;
 	private Controller app;
+	private JLabel label;
+	private SpringLayout layout;
+	private JButton mainButton;
 	
 	/**
 	 * Creates a new FarmerPanelSecondEnding with the controller it will be contained in
@@ -23,6 +26,10 @@ public class FarmerPanelSecondEnding extends JPanel
 		super();
 		this.panel = new JPanel();
 		this.app = app;
+		
+		this.label = new JLabel("");
+		this.layout = new SpringLayout();
+		this.mainButton = new JButton("Return to main screen");
 		
 		setupPanel();
 		setupListeners();

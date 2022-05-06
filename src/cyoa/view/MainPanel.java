@@ -43,9 +43,7 @@ public class MainPanel extends JPanel
 		this.panel = new JPanel(new GridLayout(2, 2));
 		this.label = new JLabel("What type of adventure would you like to have?");
 		this.layout = new SpringLayout();
-		
 		this.cardPanel = new JPanel(new CardLayout());
-		
 		this.farmerInfo = new FarmerStory();
 		
 		this.farmerBeginning = new FarmerPanelBeginning(this.app);
@@ -66,7 +64,7 @@ public class MainPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(layout);
-		this.setPreferredSize(new Dimension(1500,900));
+		this.setPreferredSize(new Dimension(800,800));
 		
 		this.add(panel);
 		this.add(label);
@@ -90,12 +88,13 @@ public class MainPanel extends JPanel
 	 */
 	private void setupLayout()
 	{
-		layout.putConstraint(SpringLayout.WEST, label, 554, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.SOUTH, label, -68, SpringLayout.NORTH, panel);
-		layout.putConstraint(SpringLayout.NORTH, panel, 283, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.SOUTH, panel, -143, SpringLayout.SOUTH, this);
-		layout.putConstraint(SpringLayout.WEST, panel, 405, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.EAST, panel, 1004, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -85, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.EAST, label, -246, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.NORTH, panel, 265, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -279, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, -583, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, -203, SpringLayout.EAST, this);
+		
 	}
 }
 

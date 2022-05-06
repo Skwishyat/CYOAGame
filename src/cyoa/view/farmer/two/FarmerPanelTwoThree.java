@@ -1,6 +1,7 @@
 package cyoa.view.farmer.two;
 
 import java.awt.Dimension;
+import java.awt.GridLayout;
 
 import javax.swing.*;
 import cyoa.controller.Controller;
@@ -34,11 +35,11 @@ public class FarmerPanelTwoThree extends JPanel
 	public FarmerPanelTwoThree(Controller app)
 	{
 		super();
-		this.panel = new JPanel();
+		this.panel = new JPanel(new GridLayout(1,2));
 		this.app = app;
 		
 		this.layout = new SpringLayout();
-		this.label = new JLabel("B3"); 
+		this.label = new JLabel("B3");
 		
 		this.farmerInfo = new FarmerStory();
 		
@@ -57,7 +58,7 @@ public class FarmerPanelTwoThree extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(layout);		
-		this.setPreferredSize(new Dimension(1500,900));
+		this.setPreferredSize(new Dimension(800,800));
 		this.add(panel);
 		this.add(label);
 		
@@ -79,11 +80,11 @@ public class FarmerPanelTwoThree extends JPanel
 	 */
 	private void setupLayout()
 	{
-		layout.putConstraint(SpringLayout.NORTH, label, 78, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.WEST, panel, 297, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.SOUTH, panel, 175, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.EAST, panel, 571, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.NORTH, panel, 42, SpringLayout.SOUTH, label);
-		layout.putConstraint(SpringLayout.WEST, label, 424, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, panel, 265, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -279, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, -583, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, -203, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -83, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.EAST, label, -384, SpringLayout.EAST, this);
 	}
 }

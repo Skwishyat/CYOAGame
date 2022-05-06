@@ -210,7 +210,7 @@ public class StoryFrame extends JFrame
 		
 		this.setContentPane(cardPanel);
 		this.setTitle("Choose your own adventure!");
-		this.setSize(1500, 900);
+		this.setSize(800, 800);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);

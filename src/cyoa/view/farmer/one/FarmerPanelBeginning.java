@@ -1,6 +1,5 @@
 package cyoa.view.farmer.one;
 
-import javax.swing.JPanel;
 import cyoa.controller.Controller;
 import java.awt.*;
 import javax.swing.*;
@@ -35,8 +34,10 @@ public class FarmerPanelBeginning extends JPanel
 		this.app = app;
 		this.panel = new JPanel(new GridLayout(1,0));
 		this.label = new JLabel("One of your sheep has jumped the fence and run off into the dark "
-				+ "forest! /nWhat will you do:");
+				+ "forest! What will you do?");
 		this.layout = new SpringLayout();
+		layout.putConstraint(SpringLayout.SOUTH, label, -82, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.EAST, label, -103, SpringLayout.EAST, this);
 		
 		this.farmerInfo = new FarmerStory();
 		
@@ -55,7 +56,7 @@ public class FarmerPanelBeginning extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(layout);
-		this.setPreferredSize(new Dimension(1500,900));
+		this.setPreferredSize(new Dimension(800,800));
 		
 		this.add(panel);
 		this.add(label);
@@ -80,11 +81,10 @@ public class FarmerPanelBeginning extends JPanel
 	 */
 	private void setupLayout()
 	{
-		layout.putConstraint(SpringLayout.NORTH, panel, 269, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.SOUTH, panel, -506, SpringLayout.SOUTH, this);
-		layout.putConstraint(SpringLayout.NORTH, label, 0, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.SOUTH, label, -253, SpringLayout.NORTH, panel);
-		layout.putConstraint(SpringLayout.WEST, panel, 0, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.EAST, panel, -1044, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.NORTH, panel, 265, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -279, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, -583, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, -203, SpringLayout.EAST, this);
+		
 	}
 }

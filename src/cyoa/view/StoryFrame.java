@@ -31,6 +31,8 @@ public class StoryFrame extends JFrame
 	private QuestStory questInfo;
 	private SpaceStory spaceInfo;
 	
+	private PastStoriesPanel pastStories;
+	
 	private FarmerPanelBeginning farmerBeginning;
 	
 	private FarmerPanelTwoOne bOne;
@@ -97,6 +99,8 @@ public class StoryFrame extends JFrame
 		this.questInfo = new QuestStory();
 		this.spaceInfo = new SpaceStory();
 		
+		this.pastStories = new PastStoriesPanel(this.app);
+
 		this.farmerBeginning = new FarmerPanelBeginning(this.app);
 		
 		this.bOne = new FarmerPanelTwoOne(this.app);
@@ -157,6 +161,7 @@ public class StoryFrame extends JFrame
 	private void setupFrame()
 	{
 		cardPanel.add(panel, "main");
+		cardPanel.add(pastStories, "Past Stories");
 		cardPanel.add(farmerBeginning, farmerInfo.panels[farmerInfo.A_ONE]);
 		
 		cardPanel.add(bOne, farmerInfo.panels[farmerInfo.B_ONE]);

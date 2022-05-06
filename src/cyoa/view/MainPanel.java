@@ -6,7 +6,6 @@ import java.awt.*;
 
 import cyoa.controller.Controller;
 import cyoa.model.FarmerStory;
-import cyoa.view.farmer.one.FarmerPanelBeginning;
 
 /**
  * This is the panel for the main screen of the application
@@ -20,17 +19,12 @@ public class MainPanel extends JPanel
 	private JPanel panel;
 	private JLabel label;
 	private SpringLayout layout;
-	
-	private JPanel cardPanel;
-	
 	private FarmerStory farmerInfo;
-	
-	private FarmerPanelBeginning farmerBeginning;
 	
 	private JButton farmerButton;
 	private JButton questButton;
 	private JButton spaceButton;
-	private JButton storeButton;
+	private JButton pastStoriesButton;
 	
 	/**
 	 * Creates a new main panel with which controller it will be contained in
@@ -43,15 +37,12 @@ public class MainPanel extends JPanel
 		this.panel = new JPanel(new GridLayout(2, 2));
 		this.label = new JLabel("What type of adventure would you like to have?");
 		this.layout = new SpringLayout();
-		this.cardPanel = new JPanel(new CardLayout());
 		this.farmerInfo = new FarmerStory();
-		
-		this.farmerBeginning = new FarmerPanelBeginning(this.app);
-		
+				
 		this.farmerButton = new JButton("Young Farmer");
 		this.questButton = new JButton("Magic Quest");
 		this.spaceButton = new JButton("Space Adventure");
-		this.storeButton = new JButton("View completed stories");
+		this.pastStoriesButton = new JButton("View completed stories");
 		
 		setupPanel();
 		setupListeners();
@@ -72,7 +63,7 @@ public class MainPanel extends JPanel
 		panel.add(farmerButton);
 		panel.add(questButton);
 		panel.add(spaceButton);
-		panel.add(storeButton);
+		panel.add(pastStoriesButton);
 	}
 	
 	/**
@@ -81,6 +72,7 @@ public class MainPanel extends JPanel
 	private void setupListeners()
 	{
 		farmerButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.A_ONE]));
+		pastStoriesButton.addActionListener(click -> app.getFrame().changeScreen("Past Stories"));
 	}
 	
 	/**

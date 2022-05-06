@@ -36,6 +36,11 @@ public class PastStoriesPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		layout.putConstraint(SpringLayout.NORTH, panel, 98, SpringLayout.SOUTH, label);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -611, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.NORTH, label, 10, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.WEST, label, 10, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.WEST, panel, 227, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, 381, SpringLayout.WEST, this);
 	}
 }

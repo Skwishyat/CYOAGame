@@ -1,7 +1,10 @@
 package cyoa.view.farmer.four;
 
-import javax.swing.JPanel;
+import java.awt.*;
+
+import javax.swing.*;
 import cyoa.controller.Controller;
+import cyoa.model.FarmerStory;
 
 /**
  * This is the panel for the thirteenth possibility of the fourth situation the user will encounter
@@ -13,6 +16,12 @@ public class FarmerPanelFourThirteen extends JPanel
 {
 	private JPanel panel;
 	private Controller app;
+	private JLabel label;
+	private SpringLayout layout;
+	private FarmerStory farmerInfo;
+	private JButton eElevenButton;
+	private JButton eTwelveButton;
+	private JButton eThirteenButton;
 	
 	/**
 	 * Creates a new FarmerPanelFourThirteen with the controller it will be contained in
@@ -21,8 +30,16 @@ public class FarmerPanelFourThirteen extends JPanel
 	public FarmerPanelFourThirteen(Controller app)
 	{
 		super();
-		this.panel = new JPanel();
+		this.panel = new JPanel(new GridLayout(1,2));
 		this.app = app;
+		
+		this.label = new JLabel("d13");
+		this.layout = new SpringLayout();
+		this.farmerInfo = new FarmerStory();
+		
+		this.eElevenButton = new JButton("go to e11");
+		this.eTwelveButton = new JButton("go to e12");
+		this.eThirteenButton = new JButton("go to e13");
 		
 		setupPanel();
 		setupListeners();
@@ -34,7 +51,15 @@ public class FarmerPanelFourThirteen extends JPanel
 	 */
 	private void setupPanel()
 	{
+		this.setLayout(layout);
+		this.setPreferredSize(new Dimension(800,800));
 		
+		this.add(panel);
+		this.add(label);
+		
+		panel.add(eElevenButton);
+		panel.add(eTwelveButton);
+		panel.add(eThirteenButton);
 	}
 	
 	/**
@@ -42,7 +67,9 @@ public class FarmerPanelFourThirteen extends JPanel
 	 */
 	private void setupListeners()
 	{
-		
+		eElevenButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.E_ELEVEN]));
+		eTwelveButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.E_TWELVE]));
+		eThirteenButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.E_THIRTEEN]));
 	}
 	
 	/**
@@ -50,6 +77,11 @@ public class FarmerPanelFourThirteen extends JPanel
 	 */
 	private void setupLayout()
 	{
-		
+		layout.putConstraint(SpringLayout.NORTH, panel, 265, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -279, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, -583, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, -203, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -83, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.EAST, label, -384, SpringLayout.EAST, this);
 	}
 }

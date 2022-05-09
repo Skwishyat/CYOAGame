@@ -1,7 +1,10 @@
 package cyoa.view.farmer.four;
 
-import javax.swing.JPanel;
+import java.awt.*;
+
+import javax.swing.*;
 import cyoa.controller.Controller;
+import cyoa.model.FarmerStory;
 
 /**
  * This is the panel for the twelfth possibility of the fourth situation the user will encounter
@@ -13,6 +16,12 @@ public class FarmerPanelFourTwelve extends JPanel
 {
 	private JPanel panel;
 	private Controller app;
+	private JLabel label;
+	private SpringLayout layout;
+	private FarmerStory farmerInfo;
+	private JButton eSevenButton;
+	private JButton eTenButton;
+	private JButton eTwelveButton;
 	
 	/**
 	 * Creates a new FarmerPanelFourTwelve with the controller it will be contained in
@@ -21,8 +30,16 @@ public class FarmerPanelFourTwelve extends JPanel
 	public FarmerPanelFourTwelve(Controller app)
 	{
 		super();
-		this.panel = new JPanel();
+		this.panel = new JPanel(new GridLayout(1,2));
 		this.app = app;
+		
+		this.label = new JLabel("d12");
+		this.layout = new SpringLayout();
+		this.farmerInfo = new FarmerStory();
+		
+		this.eSevenButton = new JButton("go to e7");
+		this.eTenButton = new JButton("go to e10");
+		this.eTwelveButton = new JButton("go to e12");
 		
 		setupPanel();
 		setupListeners();
@@ -34,7 +51,15 @@ public class FarmerPanelFourTwelve extends JPanel
 	 */
 	private void setupPanel()
 	{
+		this.setLayout(layout);
+		this.setPreferredSize(new Dimension(800,800));
 		
+		this.add(panel);
+		this.add(label);
+		
+		panel.add(eSevenButton);
+		panel.add(eTenButton);
+		panel.add(eTwelveButton);
 	}
 	
 	/**
@@ -42,7 +67,9 @@ public class FarmerPanelFourTwelve extends JPanel
 	 */
 	private void setupListeners()
 	{
-		
+		eSevenButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.E_SEVEN]));
+		eTenButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.E_TEN]));
+		eTwelveButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.E_TWELVE]));
 	}
 	
 	/**
@@ -50,6 +77,11 @@ public class FarmerPanelFourTwelve extends JPanel
 	 */
 	private void setupLayout()
 	{
-		
+		layout.putConstraint(SpringLayout.NORTH, panel, 265, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -279, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.WEST, panel, -583, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, -203, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -83, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.EAST, label, -384, SpringLayout.EAST, this);
 	}
 }

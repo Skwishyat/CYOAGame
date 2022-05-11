@@ -1,5 +1,7 @@
 package cyoa.view.farmer.six;
 
+import java.awt.*;
+
 import javax.swing.*;
 import cyoa.controller.Controller;
 
@@ -24,11 +26,12 @@ public class FarmerPanelFifthEnding extends JPanel
 	public FarmerPanelFifthEnding(Controller app)
 	{
 		super();
-		this.panel = new JPanel();
+		this.panel = new JPanel(new GridLayout(1,1));
 		this.app = app;
 		
-		this.label = new JLabel("");
+		this.label = new JLabel("fifth ending");
 		this.layout = new SpringLayout();
+		
 		this.mainButton = new JButton("Return to main screen");
 		
 		setupPanel();
@@ -41,7 +44,13 @@ public class FarmerPanelFifthEnding extends JPanel
 	 */
 	private void setupPanel()
 	{
+		this.setLayout(layout);
+		this.setPreferredSize(new Dimension(800,800));
 		
+		this.add(panel);
+		this.add(label);
+		
+		panel.add(mainButton);
 	}
 	
 	/**
@@ -49,7 +58,7 @@ public class FarmerPanelFifthEnding extends JPanel
 	 */
 	private void setupListeners()
 	{
-		
+		mainButton.addActionListener(click -> app.getFrame().changeScreen("main"));
 	}
 	
 	/**
@@ -57,6 +66,11 @@ public class FarmerPanelFifthEnding extends JPanel
 	 */
 	private void setupLayout()
 	{
-		
+		layout.putConstraint(SpringLayout.WEST, panel, -498, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.EAST, panel, -285, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -78, SpringLayout.NORTH, panel);
+		layout.putConstraint(SpringLayout.EAST, label, -244, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.NORTH, panel, 262, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -412, SpringLayout.SOUTH, this);
 	}
 }

@@ -1,7 +1,10 @@
 package cyoa.view.farmer.five;
 
-import javax.swing.JPanel;
+import java.awt.*;
+
+import javax.swing.*;
 import cyoa.controller.Controller;
+import cyoa.model.FarmerStory;
 
 /**
  * This is the panel for the third possibility of the fifth situation the user will encounter
@@ -13,6 +16,10 @@ public class FarmerPanelFiveThree extends JPanel
 {
 	private JPanel panel;
 	private Controller app;
+	private JLabel label;
+	private SpringLayout layout;
+	private FarmerStory farmerInfo;
+	private JButton fTwoButton;
 	
 	/**
 	 * Creates a new FarmerPanelFiveThree with the controller it will be contained in
@@ -21,8 +28,14 @@ public class FarmerPanelFiveThree extends JPanel
 	public FarmerPanelFiveThree(Controller app)
 	{
 		super();
-		this.panel = new JPanel();
+		this.panel = new JPanel(new GridLayout(1,1));
 		this.app = app;
+		
+		this.label = new JLabel("e3");
+		this.layout = new SpringLayout();
+		this.farmerInfo = new FarmerStory();
+		
+		this.fTwoButton = new JButton("go to second ending");
 		
 		setupPanel();
 		setupListeners();
@@ -34,7 +47,13 @@ public class FarmerPanelFiveThree extends JPanel
 	 */
 	private void setupPanel()
 	{
+		this.setLayout(layout);
+		this.setPreferredSize(new Dimension(800,800));
 		
+		this.add(panel);
+		this.add(label);
+		
+		panel.add(fTwoButton);
 	}
 	
 	/**
@@ -42,7 +61,7 @@ public class FarmerPanelFiveThree extends JPanel
 	 */
 	private void setupListeners()
 	{
-		
+		fTwoButton.addActionListener(click -> app.getFrame().changeScreen(farmerInfo.panels[farmerInfo.F_TWO]));
 	}
 	
 	/**
@@ -50,6 +69,11 @@ public class FarmerPanelFiveThree extends JPanel
 	 */
 	private void setupLayout()
 	{
-		
+		layout.putConstraint(SpringLayout.EAST, label, -384, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.NORTH, panel, 80, SpringLayout.SOUTH, label);
+		layout.putConstraint(SpringLayout.WEST, panel, -498, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.SOUTH, panel, -412, SpringLayout.SOUTH, this);
+		layout.putConstraint(SpringLayout.EAST, panel, -285, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.SOUTH, label, -618, SpringLayout.SOUTH, this);
 	}
 }

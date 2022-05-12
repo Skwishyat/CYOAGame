@@ -61,6 +61,111 @@ public class StoryGraph
 		myGraph.addEdge("a1", "b2");
 		myGraph.addEdge("a1", "b3");
 		
+		
+		myGraph.addEdge("b1", "c1");
+		myGraph.addEdge("b1", "c2");
+		
+		myGraph.addEdge("b2", "c3");
+		myGraph.addEdge("b2", "c4");
+		myGraph.addEdge("b2", "c5");
+		
+		myGraph.addEdge("b3", "c6");
+		myGraph.addEdge("b3", "c7");
+		
+		
+		myGraph.addEdge("c1", "d1");
+		myGraph.addEdge("c1", "d2");
+		myGraph.addEdge("c1", "d8");
+		
+		myGraph.addEdge("c2", "d3");
+		myGraph.addEdge("c2", "d4");
+		myGraph.addEdge("c2", "d5");
+		
+		myGraph.addEdge("c3", "d5");
+		myGraph.addEdge("c3", "d6");
+		myGraph.addEdge("c3", "d7");
+		
+		myGraph.addEdge("c4", "d8");
+		myGraph.addEdge("c4", "d9");
+		
+		myGraph.addEdge("c5", "d10");
+		myGraph.addEdge("c5", "d11");
+		myGraph.addEdge("c5", "d12");
+		
+		myGraph.addEdge("c6", "d12");
+		myGraph.addEdge("c6", "d13");
+		myGraph.addEdge("c6", "d14");
+		
+		myGraph.addEdge("c7", "d3");
+		myGraph.addEdge("c7", "d13");
+		myGraph.addEdge("c7", "d15");
+		
+		
+		myGraph.addEdge("d1", "e1");
+		myGraph.addEdge("d1", "e13");
+		
+		myGraph.addEdge("d2", "e1");
+		myGraph.addEdge("d2", "e2");
+		
+		myGraph.addEdge("d3", "e2");
+		myGraph.addEdge("d3", "e3");
+		
+		myGraph.addEdge("d4", "e1");
+		myGraph.addEdge("d4", "e3");
+		
+		myGraph.addEdge("d5", "e3");
+		myGraph.addEdge("d5", "e5");
+		myGraph.addEdge("d5", "e10");
+		
+		myGraph.addEdge("d6", "e2");
+		myGraph.addEdge("d6", "e6");
+		
+		myGraph.addEdge("d7", "e4");
+		myGraph.addEdge("d7", "e8");
+		
+		myGraph.addEdge("d8", "e5");
+		myGraph.addEdge("d8", "e9");
+		
+		myGraph.addEdge("d9", "e6");
+		myGraph.addEdge("d9", "e7");
+		
+		myGraph.addEdge("d10", "e3");
+		myGraph.addEdge("d10", "e8");
+		
+		myGraph.addEdge("d11", "e1");
+		myGraph.addEdge("d11", "e9");
+		
+		myGraph.addEdge("d12", "e7");
+		myGraph.addEdge("d12", "e10");
+		myGraph.addEdge("d12", "e12");
+		
+		myGraph.addEdge("d13", "e11");
+		myGraph.addEdge("d13", "e12");
+		myGraph.addEdge("d13", "e13");
+		
+		myGraph.addEdge("d14", "e1");
+		myGraph.addEdge("d14", "e10");
+		myGraph.addEdge("d14", "e13");
+		
+		myGraph.addEdge("d15", "e7");
+		myGraph.addEdge("d15", "e11");
+		myGraph.addEdge("d15", "e13");
+		
+		
+		myGraph.addEdge("e1", "f1");
+		myGraph.addEdge("e2", "f1");
+		myGraph.addEdge("e3", "f2");
+		myGraph.addEdge("e4", "f2");
+		myGraph.addEdge("e5", "f2");
+		myGraph.addEdge("e6", "f3");
+		myGraph.addEdge("r7", "f3");
+		myGraph.addEdge("e8", "f4");
+		myGraph.addEdge("e9", "f5");
+		myGraph.addEdge("e10", "f5");
+		myGraph.addEdge("e11", "f5");
+		myGraph.addEdge("e12", "f6");
+		myGraph.addEdge("e13", "f7");
+		
 		return myGraph;
 	}
 	

@@ -9,9 +9,9 @@ import java.util.Stack;
 
 public class StoryGraph
 {
-	assertEquals("[a1, b1, b2, b3, c1, c2, c3, c4, c5, c6, c7, d1, d2, d3, d4, d5, d6, d7, d8, d9, "
-			+ "d10, d11, d12, d13, d14, d15, e1, e2, e3, e4, e5, e6, e7, e8, e9, "
-			+ "e10, e11, e12, e13, f1, f2, f3, f4, f5, f6]", depthFirstTraversal(createGraph(), "a1").toString());
+//	assertEquals("[a1, b1, b2, b3, c1, c2, c3, c4, c5, c6, c7, d1, d2, d3, d4, d5, d6, d7, d8, d9, "
+//			+ "d10, d11, d12, d13, d14, d15, e1, e2, e3, e4, e5, e6, e7, e8, e9, "
+//			+ "e10, e11, e12, e13, f1, f2, f3, f4, f5, f6]", depthFirstTraversal(createGraph(), "a1").toString());
 	
 	
 	public Graph createGraph()

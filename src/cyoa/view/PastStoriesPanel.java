@@ -1,6 +1,7 @@
 package cyoa.view;
 
-import java.awt.Dimension;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 import javax.swing.*;
 
@@ -13,6 +14,11 @@ public class PastStoriesPanel extends JPanel
 	private JLabel label;
 	private SpringLayout layout;
 	
+	private JLabel imageLabel;
+	private ImageIcon graphImage;
+	
+	private JScrollPane scrollPane;
+	
 	public PastStoriesPanel(Controller app)
 	{
 		super();
@@ -21,8 +27,20 @@ public class PastStoriesPanel extends JPanel
 		this.label = new JLabel("take a look at the stories you previously completed:");
 		this.layout = new SpringLayout();
 		
+		this.graphImage = new ImageIcon();
+		this.scrollPane = new JScrollPane();
+		
+		updateDisplay();
 		setupPanel();
 		setupLayout();
+	}
+	
+	private void updateDisplay()
+	{
+		String fileName = "src/cyoa/view/images/BasicStoryBoard.png";
+		
+		graphImage = new ImageIcon(getClass().getResource("/BasicStoryBoard.png"));
+		imageLabel.setIcon(graphImage);
 	}
 	
 	private void setupPanel()
@@ -32,6 +50,12 @@ public class PastStoriesPanel extends JPanel
 		
 		this.add(panel);
 		this.add(label);
+		this.add(imageLabel);
+		
+		panel.add(scrollPane);
+		
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 	
 	private void setupLayout()

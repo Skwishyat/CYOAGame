@@ -1,7 +1,6 @@
 package cyoa.view.farmer.six;
 
 import java.awt.*;
-
 import javax.swing.*;
 import cyoa.controller.Controller;
 
@@ -34,6 +33,8 @@ public class FarmerPanelThirdEnding extends JPanel
 		
 		this.mainButton = new JButton("Return to main screen");
 		
+		
+		
 		setupPanel();
 		setupListeners();
 		setupLayout();
@@ -58,7 +59,13 @@ public class FarmerPanelThirdEnding extends JPanel
 	 */
 	private void setupListeners()
 	{
-		mainButton.addActionListener(click -> app.getFrame().changeScreen("main"));
+		mainButton.addActionListener(click -> doMethods());
+	}
+	
+	private void doMethods()
+	{
+		app.addGraph("Farmer Story:");
+		app.getFrame().changeScreen("main");
 	}
 	
 	/**

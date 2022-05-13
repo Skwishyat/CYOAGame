@@ -31,4 +31,9 @@ public class Controller
 	{
 		return frame;
 	}
+	
+	public void addGraph(String storyType)
+	{
+		getFrame().getPastStories().addGraph(storyType);
+	}
 }

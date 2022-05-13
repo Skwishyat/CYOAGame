@@ -221,6 +221,11 @@ public class StoryFrame extends JFrame
 		this.setVisible(true);
 	}
 	
+	public PastStoriesPanel getPastStories()
+	{
+		return pastStories;
+	}
+	
 	/**
 	 * Changes which panel is being displayed to be used when the corresponding buttons are clicked
 	 * @param screen the screen code for the panel to change to

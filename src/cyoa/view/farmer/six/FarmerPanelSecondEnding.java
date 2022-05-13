@@ -34,6 +34,8 @@ public class FarmerPanelSecondEnding extends JPanel
 		
 		this.mainButton = new JButton("Return to main screen");
 		
+		
+		
 		setupPanel();
 		setupListeners();
 		setupLayout();
@@ -58,7 +60,13 @@ public class FarmerPanelSecondEnding extends JPanel
 	 */
 	private void setupListeners()
 	{
-		mainButton.addActionListener(clikc -> app.getFrame().changeScreen("main"));
+		mainButton.addActionListener(clikc -> doMethods());
+	}
+	
+	private void doMethods()
+	{
+		app.addGraph("Farmer Story:");
+		app.getFrame().changeScreen("main");
 	}
 	
 	/**

@@ -58,7 +58,13 @@ public class FarmerPanelFirstEnding extends JPanel
 	 */
 	private void setupListeners()
 	{
-		mainButton.addActionListener(click -> app.getFrame().changeScreen("main"));
+		mainButton.addActionListener(click -> doMethods());
+	}
+	
+	private void doMethods()
+	{
+		app.addGraph("Farmer Story:");
+		app.getFrame().changeScreen("main");
 	}
 	
 	/**

@@ -65,7 +65,7 @@ public class FarmerPanelSecondEnding extends JPanel
 	
 	private void doMethods()
 	{
-		app.addGraph("Farmer Story:");
+		app.addGraph("Farmer Story");
 		app.getFrame().changeScreen("main");
 	}
 	

@@ -47,15 +47,15 @@ public class PastStoriesPanel extends JPanel
 		{
 			this.graphImage = ImageIO.read(new File("src/cyoa/view/images/BasicStoryBoard copy.png"));
 		}
-		catch (IOException e)
+		catch (IOException exception)
 		{
 			System.out.println("didn't work");
 		}
 		this.imageLabel = new JLabel(new ImageIcon(graphImage));
-		
-		viewPanel.add(imageLabel);
 		this.graphLabel = new JLabel(storyType);
 		viewPanel.add(graphLabel);
+		viewPanel.add(imageLabel);
+		
 	}
 	
 	private void setupPanel()

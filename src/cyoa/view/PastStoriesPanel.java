@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -21,6 +22,9 @@ public class PastStoriesPanel extends JPanel
 	private BufferedImage graphImage;
 	private JLabel imageLabel;
 	private JButton mainButton;
+	private JButton saveButton;
+	private int countStories;
+	private ArrayList<String> storyTypes;
 	
 	public PastStoriesPanel(Controller app)
 	{
@@ -30,10 +34,12 @@ public class PastStoriesPanel extends JPanel
 		this.label = new JLabel("take a look at the stories you previously completed:");
 		this.layout = new SpringLayout();
 		
+		this.countStories = 0;
+		this.storyTypes = new ArrayList<String>();
+		
 		this.viewPanel = new JPanel(new GridLayout(3,3)); 
-		
+		this.saveButton = new JButton("Save these stories");
 		this.mainButton = new JButton("Go back to main screen");
-		
 		
 		setupPanel();
 		setupListeners();
@@ -43,6 +49,8 @@ public class PastStoriesPanel extends JPanel
 	
 	public void addGraph(String storyType)
 	{
+		countStories++;
+		storyTypes.add(storyType);
 		try
 		{
 			this.graphImage = ImageIO.read(new File("src/cyoa/view/images/BasicStoryBoard copy.png"));
@@ -69,11 +77,13 @@ public class PastStoriesPanel extends JPanel
 		this.add(label);
 		
 		panel.add(mainButton);
+		panel.add(saveButton);
 	}
 	
 	private void setupListeners()
 	{
 		mainButton.addActionListener(click -> app.getFrame().changeScreen("main"));
+		saveButton.addActionListener(click -> app.save("story types.txt", "number of stories.txt", storyTypes, countStories));
 	}
 	
 	private void setupLayout()
